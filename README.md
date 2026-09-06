@@ -26,3 +26,10 @@ pio run -t upload
 ```bash
 pio device monitor
 ```
+
+## Cool things that made this possible
+* [PlatformIO](https://platformio.org/)
+* [Neovim](https://neovim.io/)
+* [clangd](https://clangd.llvm.org/)
+* [P1AM-100](https://www.olimex.com/Products/PLC/P1AM-100/Open-Source-Hardware)
+* [P1-08SIM](https://www.olimex.com/Products/PLC/P1-08SIM/Open-Source-Hardware)
