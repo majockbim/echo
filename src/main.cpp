@@ -4,6 +4,21 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 
 const int SERVO_MIN = 150, SERVO_MAX = 600;
 
+/* memory & state */
+struct Waypoint {
+    int angles[4];
+};
+
+const int MAX_WAYPOINTS = 50;
+Waypoint sequence[MAX_WAYPOINTS];
+int waypointCount = 0;
+
+int currentAngles[4] = {90, 90, 90, 90}; // start at 90deg
+
+// rate limit jog speed for smoothness
+unsigned long lastJogTime = 0;
+const int JOG_DELAY_MS = 20;
+
 /* HAL */
 uint8_t readSwitches() {
     // read discrete inputs from module in slot 1
