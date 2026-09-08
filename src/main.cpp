@@ -54,5 +54,17 @@ void setup() {
 }
 
 void loop() {
-    // todo: state machine logic
+    uint8_t switches = readSwitches();
+
+    uint8_t switch2 = bitRead(switches, 1); // sw2 -> bit 1
+    uint8_t switch3 = bitRead(switches, 2);
+
+    uint8_t selectedServo = (sw3 << 1) | sw2; // 0-3
+
+    /* jogging logic */
+    bool jogForward = bitRead(switches, 4); // sw5 -> bit 4
+    bool jogBackward = bitRead(switches, 5);
+
+
+    
 }
